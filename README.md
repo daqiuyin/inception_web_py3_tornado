@@ -1,0 +1,9 @@
+# inception_web_py3_tornado
+这个项目是基于python3和tornado来写的inception的web
+有几个需要注意：
+1.inception不支持mycat
+2.mycat的原生审核工具不如inception
+3.pymysql如果使用在inception中使用必须要修改相应的代码
+4.inception中的目标库和备份库不能再同一台服务器的同一个端口上
+5.这个web是基于tornado写的，web界面是借鉴了我star的lihuidba的代码
+6.这个还加了一些mycat常用的工具，也是自己写的
