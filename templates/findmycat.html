@@ -1,0 +1,92 @@
+<html>
+ <head>
+ </head>
+ <body >
+   {% extends base.html %}
+   {% import _macros.html as macros %}
+   {% block title %}Oracle建表语句生成{% end %}
+   {% block content %}
+  <div id ="document" class="main-content">
+
+   <div class="breadcrumbs" id="breadcrumbs" >
+    <script type="text/javascript">
+try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+    </script>
+    <ul class="breadcrumb">
+     <li> <i class="icon-home home-icon"></i> <a href="/">Home</a> </li>
+     <li> <a href="/">运维工具</a> </li>
+     <li class="active">查询Mycat配置</li>
+    </ul>
+    <!-- .breadcrumb -->
+   </div>
+   <div class="page-content">
+
+    <div class="row">
+     <div class="col-xs-12">
+      <div class="page-content">
+       <div class="page-header">
+        <h1>查询Mycat配置<small></small></h1>
+        <small> </small>
+       </div>
+       <small>
+        <div class="row">
+         <div class="col-md-9">
+
+          <div class="panel panel-primary">
+           <div class="panel-heading">
+            请填入所需要的信息
+           </div>
+           <div class="panel-body">
+            <div class="form-horizontal" >
+             <div class="form-group">
+              <div class="col-sm-9">
+               <div class="col-sm-9">
+
+                <div class="form-group">
+                <select id="mycattableschema" class="combobox">
+                <option>选择数据库</option>
+                <option value="retail_fas">FAS</option>
+                <option value="retail_gms">GMS</option>
+                </select>
+                </div>
+
+	    <div class="form-group">
+		<input type="text" class="form-control" id="mycattablename"placeholder="请输入表名(如有多个请以英文逗号隔开)">
+         </div>
+             </div>
+             <div class="space-4"></div>
+              <div class="col-md-offset-0 col-md-5">
+               <button id ="commit" class="btn btn-info"> <i class="icon-ok bigger-110"></i> Submit </button>
+               <button class="btn" type="reset"> <i class="icon-undo bigger-110"></i> Reset </button>
+              </div>
+            </div>
+           </div>
+          </div>
+
+
+
+
+
+
+         </div>
+        </div>
+          <!--<textarea id="outmysqltooracle" placeholder="table structure" class="col-xs-10 col-sm-12" name="mysql_structure" rows="15"></textarea>-->
+        <table class="table">
+        <th id="outfindmycat"></th>
+      </table>
+
+       </small>
+      </div>
+      <small> </small>
+     </div>
+     <small> </small>
+    </div>
+    <small> </small>
+    <script src="{{static_url("js/findmycat.js")}}"></script>
+   </div>
+   <small> {% end %} </small>
+  </div>
+
+ </body>
+
+</html>

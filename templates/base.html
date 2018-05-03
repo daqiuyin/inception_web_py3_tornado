@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="{{static_url("js/jquery.min.js")}}"></script>
+    <script src="{{static_url("js/jquery.easyui.min.js")}}"></script>
+    <meta charset="utf-8" />
+	{% if title %}
+	<title>{{title}}  -数据库运维平台</title>
+	{% else %}
+    <title>数据库运维平台</title>
+    {% end %}
+
+    <!--link rel="shortcut icon" href="/static/img/facio.ico" type="image/x-icon"-->
+
+    <!-- basic styles -->
+
+    <link href="{{static_url("css/bootstrap.min.css")}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{static_url("css/font-awesome.min.css")}}" />
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+
+    {% include 'link_css.html' %}
+    {% include 'head_script.html' %}
+
+
+</head>
+
+<body>
+    <div id="wrapper" >
+            {% include 'nav.html' %}
+            {% block content %}{% end %}
+            {% include 'footer.html' %}
+     </div>
+
+    {% include 'foot_script.html' %}
+</body>
+
+</html>

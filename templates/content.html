@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block header %}
+    <meta charset="UTF-8">
+    <title>Basic Layout - jQuery EasyUI Demo</title>
+{% end %}
+{% block body %}
+
+    <div class="easyui-layout" fit="true">
+        <div data-options="region:'west',split:true" title="目录" style="width:200px;">
+             <div class="easyui-accordion" fit="true">
+                 <div title="第一期工程" data-options="iconCls:'icon-search'" style="padding:10px;">
+                     <ul class="easyui-tree">
+                         <li>
+                             <a id="tooracle">Oracle建表脚本生成</a>
+                         </li>
+                         <li>
+                             <a id="tabcompare">查询表mycat配置</a>
+                         </li>
+                         <li>
+                             <a id="tabaddmycat">增加表mycat配置</a>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+        </div>
+        <div  data-options="region:'center',title:' ',iconCls:'icon-ok'" fit = "ture" >
+
+          <div id = "tooraclesheet"  class="easyui-panel" data-options="border:false,plain:true" fit="ture" style="left:10px;top:50px">
+	        <select id= "databaseselect" class="easyui-combobox" name="state" style="width:200px;">
+		        <option value="221dev">221开发库</option>
+		        <option value="83dev">FAS开发库</option>
+		        <option value="133dev">GMS开发库</option>
+		        <option value="21dev">POS培训库</option>
+		        <option value="22dev">GMS培训库</option>
+	        </select>
+
+           <col width="100" />
+           <col />
+           <tbody>
+            <tr>
+             <th>表名：</th>
+             <td><input id = "tablename" class="ipt"  multiSearch="brand"  id ="table_name" /><input type="hidden" name="multiBrandNo"></td>
+             <th>字段名：</th>
+             <td><input id = "columnname" class="ipt"  multiSearch="brand"  id="column_name" /><input type="hidden" name="multiBrandNo"></td>
+            </tr>
+            <input type="button" value="提交" id ="commit"/>
+           </tbody>
+            <p id="outcontent" >
+            </p>
+
+		   </div>
+
+            <div id = "findshema" class="easyui-panel" data-options="border:false,plain:true" fit="ture" style="left:10px;top:50px">
+            <select id= "mycattableschema" class="easyui-combobox" name="state" style="width:200px;">
+		        <option value="retail_fas">FAS</option>
+                <option value="retail_gms">GMS</option>
+	        </select>
+                <col width="100" />
+                <col />
+                <tbody>
+                <tr>
+                <th>表名：</th>
+                <td><input id = "mycattablename" class="ipt"  multiSearch="brand"  id ="table_name" /><input type="hidden" name="multiBrandNo"></td>
+                </tr>
+                <input type="button" value="提交" id ="commit2"/>
+                </tbody>
+                <p id="outcontent2" >
+                </p>
+            </div>
+
+            <div id = "addmycat" class="easyui-panel" data-options="border:false,plain:true" fit="ture" style="left:10px;top:50px">
+                <col width="100" />
+                <col />
+                <tbody>
+                <tr>
+                <!--<td><input id = "addmycattableschema" class="ipt"  multiSearch="brand" /><input type="hidden" name="multiBrandNo"></td>-->
+                <select id= "addmycattableschema" class="easyui-combobox" name="state" style="width:200px;">
+		        <option value="retail_gms">GMS</option>
+		        <option value="retail_fas">FAS</option>
+	        </select>
+                </tr>
+                <tr>
+                <th>表名：</th>
+                <td><input id = "addmycattablename" class="ipt"  multiSearch="brand" /><input type="hidden" name="multiBrandNo"></td>
+                </tr>
+                <tr>
+                <th>类型：</th>
+                <!--<td><input id = "addmycatschema" class="ipt"  multiSearch="brand" /><input type="hidden" name="multiBrandNo"></td>-->
+              <select id= "addmycatschema" class="easyui-combobox" name="state" style="width:200px;">
+		        <option value="global">全局表</option>
+		        <option value="sharding">分库表</option>
+		        <option value="single">单表</option>
+	        </select>
+                </tr>
+                <input type="button" value="提交" id ="commit3"/>
+                </tbody>
+                <p id="outcontent3" >
+                </p>
+            </div>
+
+         </div>
+
+
+        </div>
+
+    </div>
+
+<script src="{{static_url("js/content.js")}}"></script>
+{% end %}
